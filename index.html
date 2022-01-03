@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Mask Video</title>
+	<script src="https://kit.fontawesome.com/c47106c6a7.js" crossorigin="anonymous"></script>	
+	<link rel="stylesheet" href="css/style.css">
+	<script defer src="js/mask.js"></script>
+</head>
+
+<body>
+	<section>
+		<article class="lower">
+			LOWER
+		</article>
+
+		<article class="upper">
+			UPPER
+		</article>
+	</section>
+
+	<script>
+		const section = document.querySelector("section");
+		section.onclick = e=>{
+			e.currentTarget.classList.add("on");
+		}
+	</script>
+</body>
+
+</html>

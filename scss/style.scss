@@ -1,0 +1,70 @@
+@charset 'UTF-8';
+@import url("https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Orbitron&display=swap");
+
+@import "reset";
+
+main {
+	width: 100vw;
+	height: 100vh;
+	position: relative;
+	overflow: hidden;
+
+	@import "header";
+	@import "show";
+	@import "sns";
+}
+
+section{
+	width: 100%;
+	height: 100vh;
+	position: relative;
+
+	article{
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0; left: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font: bold 100px/1 "arial";
+		color: #fff;
+
+		&.lower{
+			background: pink;
+		}
+		&.upper{
+			background: aqua;
+			//마스크 처리할 png이미지 경로
+			-webkit-mask: url(../src/mask1.png);
+			//마스크 이미지 사이즈 지정
+			-webkit-mask-size: 2300% 100%;
+			//마스크 위치 지정
+			-webkit-mask-position: 0% 0%;
+
+		}
+	}
+
+	&.on{
+		.upper{
+			animation: mask-play 1.5s steps(22) forwards;
+		}
+	}
+}
+
+@keyframes mask-play {
+	0%{
+		-webkit-mask-position: 0% 0%;
+	}
+	100%{
+		-webkit-mask-position: 100% 0%;
+	}
+}
+
+/*
+mask
+두개의 레이어가 겹쳐져 있을 때 위쪽의 레이어에 적용
+--마스크에서 투명한 부분이 뚫린 부분 (아래쪽의 레이어가 여과되어서 보임)
+--검은색 부분이 막혀있는 부분
+*/
