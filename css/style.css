@@ -100,8 +100,56 @@ main {
         height: 100%;
         object-fit: cover;
         transform: rotateY(-180deg); }
+      main section article .slogan {
+        position: absolute;
+        right: 8%;
+        top: 50%;
+        transform: translateY(-60%);
+        text-align: right;
+        padding: 50px;
+        perspective: 900px; }
+        main section article .slogan::before {
+          content: "";
+          display: block;
+          width: 500px;
+          height: 500px;
+          border: 1px solid #fff;
+          position: absolute;
+          top: 0px;
+          right: 0px;
+          opacity: 0;
+          transition: all 1.5s; }
+        main section article .slogan h2 {
+          display: inline-block;
+          overflow: hidden;
+          position: relative;
+          margin-bottom: 20px; }
+          main section article .slogan h2 .inner {
+            font: normal 200px/1 "Abril Fatface";
+            color: #fff;
+            position: relative;
+            transform: scaleY(1.25);
+            opacity: 0;
+            transition: opacity 0.2s 0.5s; }
+          main section article .slogan h2::after {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 100%;
+            background: #fff;
+            position: absolute;
+            top: 0px;
+            right: -100%;
+            transition: right ease-in-out 1s; }
       main section article.on {
         z-index: 3; }
+        main section article.on .slogan::before {
+          opacity: 1;
+          transform: rotateY(220deg); }
+        main section article.on .slogan h2 .inner {
+          opacity: 1; }
+        main section article.on .slogan h2::after {
+          right: 100%; }
       main section article.lower {
         z-index: 2; }
 
