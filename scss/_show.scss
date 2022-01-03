@@ -123,6 +123,13 @@ section {
                 }
             }
 		}
+
+        //앞으러 활성화될 패널을 현재 활성화되어있는 패널 바로 밑에 배치
+        &.lower {
+			z-index: 2;
+		}
+
+        //패널이 활성화 되었을때의 모션처리
 		&.on {
 			z-index: 3;
 
@@ -137,8 +144,33 @@ section {
 				}
 			}
 		}
-		&.lower {
-			z-index: 2;
-		}
+
+        //mask클래스가 추가로 붙었을때 모션처리
+        &:nth-of-type(1).mask {
+            -webkit-mask: url(../src/mask1.png);
+            -webkit-mask-size: 2300% 100%;
+            animation: mask-play 1.4s steps(22) forwards ;
+        }
+        &:nth-of-type(2).mask {
+            -webkit-mask: url(../src/mask2.png);
+            -webkit-mask-size: 3000% 100%;
+            animation: mask-play 1.4s steps(29) forwards ;
+        }
+        &:nth-of-type(3).mask {
+            -webkit-mask: url(../src/mask3.png);
+            -webkit-mask-size: 7100% 100%;
+            animation: mask-play 1.4s steps(70) forwards ;
+        }
+        &:nth-of-type(4).mask {
+            -webkit-mask: url(../src/mask4.png);
+            -webkit-mask-size: 7400% 100%;
+            animation: mask-play 1.4s steps(73) forwards ;
+        }
+
 	}
+}
+
+@keyframes mask-play{
+    0%{-webkit-mask-position: 0% 0%;}
+    100%{-webkit-mask-position:  100% 0%;}
 }

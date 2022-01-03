@@ -183,6 +183,8 @@ main {
             top: 0;
             right: -100%;
             transition: right ease-in-out 1s 0.6s; }
+      main section article.lower {
+        z-index: 2; }
       main section article.on {
         z-index: 3; }
         main section article.on .slogan::before {
@@ -192,7 +194,26 @@ main {
           opacity: 1; }
         main section article.on .slogan h2::after, main section article.on .slogan .p1::after, main section article.on .slogan .p2::after {
           right: 100%; }
-      main section article.lower {
-        z-index: 2; }
+      main section article:nth-of-type(1).mask {
+        -webkit-mask: url(../src/mask1.png);
+        -webkit-mask-size: 2300% 100%;
+        animation: mask-play 1.4s steps(22) forwards; }
+      main section article:nth-of-type(2).mask {
+        -webkit-mask: url(../src/mask2.png);
+        -webkit-mask-size: 3000% 100%;
+        animation: mask-play 1.4s steps(29) forwards; }
+      main section article:nth-of-type(3).mask {
+        -webkit-mask: url(../src/mask3.png);
+        -webkit-mask-size: 7100% 100%;
+        animation: mask-play 1.4s steps(70) forwards; }
+      main section article:nth-of-type(4).mask {
+        -webkit-mask: url(../src/mask4.png);
+        -webkit-mask-size: 7400% 100%;
+        animation: mask-play 1.4s steps(73) forwards; }
+@keyframes mask-play {
+  0% {
+    -webkit-mask-position: 0% 0%; }
+  100% {
+    -webkit-mask-position: 100% 0%; } }
 
 /*# sourceMappingURL=style.css.map */
