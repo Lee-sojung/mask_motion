@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Orbitron&display=swap");
 * {
@@ -20,42 +19,79 @@ main {
   height: 100vh;
   position: relative;
   overflow: hidden; }
-
-section {
-  width: 100%;
-  height: 100vh;
-  position: relative; }
-  section article {
+  main header {
+    width: 450px;
+    height: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
+    z-index: 4; }
+    main header h1 {
+      position: absolute;
+      top: 50%;
+      left: 50px;
+      margin-top: -300px;
+      font: bold 40px/1 "orbitron";
+      color: #fff; }
+      main header h1::after {
+        content: "";
+        display: block;
+        width: 160px;
+        height: 3px;
+        background: #fff;
+        margin-top: 8px; }
+    main header #navi {
+      width: 100%;
+      position: absolute;
+      top: 50%;
+      left: 0px;
+      transform: translateY(-30%); }
+      main header #navi li {
+        width: 450px;
+        padding: 30px 50px;
+        position: relative;
+        overflow: hidden;
+        opacity: 0.4;
+        cursor: pointer;
+        transition: transform 1.4s, opacity 1.4s;
+        transform-origin: left center; }
+        main header #navi li h2 {
+          font: bold 12px/1 "orbitron";
+          color: #fff;
+          letter-spacing: 1px;
+          margin-bottom: 5px; }
+        main header #navi li p {
+          font: 10px/1 "arial";
+          color: #fff;
+          letter-spacing: 1px;
+          opacity: 0.7; }
+        main header #navi li.on {
+          background: linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0));
+          transform: scale(1.3);
+          opacity: 1; }
+  main section {
     width: 100%;
     height: 100%;
     position: absolute;
     top: 0;
-    left: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font: bold 100px/1 "arial";
-    color: #fff; }
-    section article.lower {
-      background: pink; }
-    section article.upper {
-      background: aqua;
-      -webkit-mask: url(../src/mask1.png);
-      -webkit-mask-size: 2300% 100%;
-      -webkit-mask-position: 0% 0%; }
-  section.on .upper {
-    animation: mask-play 1.5s steps(22) forwards; }
-
-@keyframes mask-play {
-  0% {
-    -webkit-mask-position: 0% 0%; }
-  100% {
-    -webkit-mask-position: 100% 0%; } }
-/*
-mask
-두개의 레이어가 겹쳐져 있을 때 위쪽의 레이어에 적용
---마스크에서 투명한 부분이 뚫린 부분 (아래쪽의 레이어가 여과되어서 보임)
---검은색 부분이 막혀있는 부분
-*/
+    left: 0; }
+    main section article {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1; }
+      main section article video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transform: rotateY(-180deg); }
+      main section article.on {
+        z-index: 3; }
+      main section article.lower {
+        z-index: 2; }
 
 /*# sourceMappingURL=style.css.map */

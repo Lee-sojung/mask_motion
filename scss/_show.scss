@@ -1,0 +1,26 @@
+section{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0; left: 0;
+
+    article{
+        width: 100%; height: 100%;
+        position: absolute;
+        top: 0; left: 0;
+        z-index: 1;
+
+        video{
+            width: 100%; height: 100%;
+            object-fit: cover;
+            transform: rotateY(-180deg);
+        }
+
+        &.on{
+            z-index: 3;
+        }
+        &.lower{
+            z-index: 2;
+        }
+    }
+}

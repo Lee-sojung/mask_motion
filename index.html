@@ -12,22 +12,45 @@
 </head>
 
 <body>
-	<section>
-		<article class="lower">
-			LOWER
-		</article>
+	<main>
+		<header>
+			<h1>DECODE<br>LABS</h1>
 
-		<article class="upper">
-			UPPER
-		</article>
-	</section>
+			<ul id="navi">
+				<li class="on">
+					<h2>01 EMRALD BEACH</h2>
+					<P>Lorem ipsum dolor sit amet consectetur.</P>
+				</li>
+				<li>
+					<h2>02 CLOUDY ISLAND</h2>
+					<P>Lorem ipsum dolor sit amet consectetur.</P>
+				</li>
+				<li>
+					<h2>03 SUNSET FIELD</h2>
+					<P>Lorem ipsum dolor sit amet consectetur.</P>
+				</li>
+				<li>
+					<h2>04 SUNRISE FOREST</h2>
+					<P>Lorem ipsum dolor sit amet consectetur.</P>
+				</li>
+			</ul>
+		</header>
 
-	<script>
-		const section = document.querySelector("section");
-		section.onclick = e=>{
-			e.currentTarget.classList.add("on");
-		}
-	</script>
+		<section>
+			<article class="on">
+				<video src="src/vid1.mp4" autoplay muted loop></video>
+			</article>
+			<article>
+				<video src="src/vid2.mp4" autoplay muted loop></video>
+			</article>
+			<article>
+				<video src="src/vid3.mp4" autoplay muted loop></video>
+			</article>
+			<article>
+				<video src="src/vid4.mp4" autoplay muted loop></video>
+			</article>
+		</section>
+	</main>
 </body>
 
 </html>
