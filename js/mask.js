@@ -50,7 +50,6 @@ class Mask {
 
                 section.innerHTML = tags;
                 const item1 = document.querySelector("article");
-                item1.classList.add("on");
             });
 
         this.init(result);
@@ -89,6 +88,7 @@ class Mask {
 
                         //로딩패널을 숨김처리
                         this.loading.style.display="none";
+                        this.panels[0].classList.add(this.class_names.on);
                     }, 1000);
                 } 
             })
