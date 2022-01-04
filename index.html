@@ -11,7 +11,12 @@
 	<script defer src="js/mask.js"></script>
 	<script>
 		window.addEventListener("load",()=>{
-			new Mask();
+			new Mask({
+				frame: "main",
+				btns: "#navi li",
+				panels: "section article",
+				class_names: {on: "on", lower:"lower", mask:"mask"}
+			});
 		})
 	</script>
 </head>
