@@ -8,6 +8,8 @@ class Mask {
         this.wrap = document.querySelector("main");
         this.btns = this.wrap.querySelectorAll("#navi li");
         this.panels = this.wrap.querySelectorAll("section article");
+        this.isOn = null;
+        this.enableClick = true;
 
         for(let panels of this.panels){
             panels.classList.remove("mask");
@@ -17,7 +19,13 @@ class Mask {
     bindingEvent() {
         this.btns.forEach((btn, index) => {
             btn.addEventListener("click", e => {
-                this.activation(index);
+                this.isOn = e.currentTarget.classList.contains("on");
+                if(this.isOn) return;
+
+                if(this.enableClick){
+                    this.enableClick = false;
+                    this.activation(index);
+                }
             })
         })
     }
@@ -51,7 +59,11 @@ class Mask {
             //클릭한 순번인 패널만 lower클래스를 지우고 on클래스를 붙여서 화면 제일 최상단에 배치
             this.panels[index].classList.remove("lower");
             this.panels[index].classList.add("on");
-        }, 1400)
+
+            setTimeout(()=>{
+                this.enableClick = true;
+            },1300) //텍스트 모션이 끝나는 순간
+        }, 1400) //마스크 모션이 끝나는 순간
     }
 }
 
