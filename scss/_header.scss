@@ -72,6 +72,15 @@ header{
                     width: 150px;
                 }
             }
+
+            //각각의 버튼에 있는 h2요소에 스크립트가 실행되기전 미리 시퀀스 이미지를 배경으로 넣어서 눈에는 보이지 않지만 미리 브라우저에 해당 소스 이미지를 caching
+            @for $i from 1 through 4 {
+                &::nth-of-type(#{$i}) {
+                    background-image: url(../src/mask#{$i}.png);
+                    background-repeat: no-repeat;
+                    background-position: -9999px -9999px;
+                }
+            }
         }
     }
 }

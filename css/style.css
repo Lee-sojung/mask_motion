@@ -82,6 +82,22 @@ main {
           opacity: 1; }
           main header #navi li.on h2::after {
             width: 150px; }
+        main header #navi li::nth-of-type(1) {
+          background-image: url(../src/mask1.png);
+          background-repeat: no-repeat;
+          background-position: -9999px -9999px; }
+        main header #navi li::nth-of-type(2) {
+          background-image: url(../src/mask2.png);
+          background-repeat: no-repeat;
+          background-position: -9999px -9999px; }
+        main header #navi li::nth-of-type(3) {
+          background-image: url(../src/mask3.png);
+          background-repeat: no-repeat;
+          background-position: -9999px -9999px; }
+        main header #navi li::nth-of-type(4) {
+          background-image: url(../src/mask4.png);
+          background-repeat: no-repeat;
+          background-position: -9999px -9999px; }
   main section {
     width: 100%;
     height: 100%;

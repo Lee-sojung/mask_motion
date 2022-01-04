@@ -8,6 +8,10 @@ class Mask {
         this.wrap = document.querySelector("main");
         this.btns = this.wrap.querySelectorAll("#navi li");
         this.panels = this.wrap.querySelectorAll("section article");
+
+        for(let panels of this.panels){
+            panels.classList.remove("mask");
+        }
     }
 
     bindingEvent() {
@@ -49,7 +53,6 @@ class Mask {
             this.panels[index].classList.add("on");
         }, 1400)
     }
-
 }
 
 
